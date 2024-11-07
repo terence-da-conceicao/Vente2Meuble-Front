@@ -40,12 +40,20 @@ const props = defineProps({
     <header>
         <img src="./public/51IDpgGCBJL.jpg">
         <h2>Vente2Meubles</h2>
-        
-        <a v-show="admin" href="/gestion">Gestion du stock</a>
-        <router-link to="/connexion">Connexion</router-link> 
-        <router-link to="/inscription">Inscription</router-link>
-        <a v-show="connect" href="/deconnexion">Déconnexion</a>
-    </header>
+        <!-- <a v-show="admin" href="/gestion">Gestion du stock</a>
+        <router-link to="/connexion">Connexion</router-link>  -->
+        <!-- <a class="logSubs" href="./Connexion.vue">Connexion</a> -->
+        <!-- <router-link to="/inscription">Inscription</router-link> -->
+        <!-- <a class="logSubs" href="./Inscription.vue">Inscription</a> -->
+        <!-- <a v-show="connect" href="/deconnexion">Déconnexion</a> -->
+
+        <RouterLink to="/">HomePage</RouterLink> 
+        <RouterLink to="/connexion">Connexion</RouterLink>
+        <RouterLink to="/deconnexion">Déconnexion</RouterLink>
+        <RouterLink to="/inscription">Inscription</RouterLink>
+        <RouterLink to="/gestion">Gestion du Stock</RouterLink>
+
+        </header>
 
 
 </template>

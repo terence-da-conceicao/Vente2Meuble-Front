@@ -3,9 +3,9 @@
 <script>
 
 // On importe notre JSON (fausse BDD) et le composant dont on va avoir besoin
-import Header from "../components/Header.vue"
-import jsonmeuble from "/jsonmeuble.json"
-import MeubleCard from "../components/MeubleCard.vue"
+    import Header from "../components/Header.vue"
+    import jsonmeuble from "/jsonmeuble.json"
+    import MeubleCard from "../components/MeubleCard.vue"
 
 // permet de spécifier les éléments qu'on importe, on lui dit que toute ce qu'il y a dans ma base de donnée sera stocké dans une variabe "data"
 export default {
@@ -18,10 +18,6 @@ export default {
         Header, MeubleCard
     }
 }
-
-// export default {
-//     name : 'HomePage'
-// }
 
 </script>
 
