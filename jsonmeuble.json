@@ -1,0 +1,30 @@
+{
+    "meubles": [
+      {
+        "nom": "Canapé 3 places",
+        "prix": 499.99,
+        "photo": "public/51IDpgGCBJL.jpg"
+      },
+      {
+        "nom": "Table à manger en bois",
+        "prix": 299.99,
+        "photo": "public/51IDpgGCBJL.jpg"
+      },
+      {
+        "nom": "Chaise en métal",
+        "prix": 59.99,
+        "photo": "public/51IDpgGCBJL.jpg"
+      },
+      {
+        "nom": "Buffet scandinave",
+        "prix": 399.99,
+        "photo": "public/51IDpgGCBJL.jpg"
+      },
+      {
+        "nom": "Étagère murale",
+        "prix": 79.99,
+        "photo": "public/51IDpgGCBJL.jpg"
+      }
+    ]
+  }
+  
