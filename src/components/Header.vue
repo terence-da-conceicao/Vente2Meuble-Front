@@ -1,58 +1,76 @@
-<script setup>
-   
-// on importe le composant dont on aura besoin ici 
+<script>
 
-import Button from "./Button.vue"
-// import Button from "./Button.vue"
-// import Button from "./Button.vue"
-// import Button from "./Button.vue"
-// import Button from "./Button.vue"
-// import Button from "./Button.vue"
+//import la méthode ref spécifique à vue qui permet de créer des variable dynamique 
+import {ref} from 'vue'
 
-// on définie les props propre à notre composant Header : 
-//logo, nom du site, login/inscription.
+//gestion de la reconnaissance si utilisateur connecté ou non 
+let admin = ref(false)
+let connected = ref(false)
 
-const props = defineProps({
-  admin: false,
-  connect: false
-})
+//fonction réutilisable ailleur dans le code 
+export function isAdmin() {
+    admin.value = true
+}
+export function isConnected() {
+    connected.value = true
+}
 
+export function disableAdmin() {
+    admin.value= false
+}
 
-// état admin ou user pour le bouton gestion de produit? 
-//avec un v-if?
+export function removeConnection() {
+    connected.value = false 
+}
 
-
+export { admin, connected };
 </script>
-<style>
+<style scoped>
+
     header {
         background-color: #FAF4E3;
         width : 100vw;
         margin-bottom : 0px;
         padding: 0rem;
         height: 10vh;
+        display : flex;
+        gap : 5%;
+        
     }
+    h2 {
+        font-size: 3em;
+        align-self: end;
+        font-family: "Zain", serif;
+        font-weight: 400;
+        font-style: normal;
 
+    }
+   header img {
+    width :5% ;
+    height: 100% ; 
+}
+    .link {
+        align-self : center ;
+        font-family: "Zain", serif;
+        font-weight: 300;
+        font-style: normal;
+        
+    }
 
 
 </style>
 <template>
 
     <header>
-        <img src="./public/51IDpgGCBJL.jpg">
-        <h2>Vente2Meubles</h2>
-        <!-- <a v-show="admin" href="/gestion">Gestion du stock</a>
-        <router-link to="/connexion">Connexion</router-link>  -->
-        <!-- <a class="logSubs" href="./Connexion.vue">Connexion</a> -->
-        <!-- <router-link to="/inscription">Inscription</router-link> -->
-        <!-- <a class="logSubs" href="./Inscription.vue">Inscription</a> -->
-        <!-- <a v-show="connect" href="/deconnexion">Déconnexion</a> -->
-
-        <RouterLink to="/">HomePage</RouterLink> 
-        <RouterLink to="/connexion">Connexion</RouterLink>
-        <RouterLink to="/deconnexion">Déconnexion</RouterLink>
-        <RouterLink to="/inscription">Inscription</RouterLink>
-        <RouterLink to="/gestion">Gestion du Stock</RouterLink>
-
+        <img src="/LogoMeubles.png">
+        <RouterLink to="/" class="link"><h2>Vente2Meubles</h2></RouterLink> 
+        
+        <div class="conditionDisplay">
+            <RouterLink to="/connexion" class="link" v-if="!connected">Connexion</RouterLink>
+            <RouterLink to="/deconnexion" class="link" v-if="connecte">Déconnexion</RouterLink>
+            <RouterLink to="/inscription" class="link" v-if="!connected">Inscription</RouterLink>
+            <RouterLink to="/gestion" class="link" v-if="admin">Gestion du Stock</RouterLink>
+        </div>
         </header>
 
 

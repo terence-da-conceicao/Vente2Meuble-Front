@@ -1,5 +1,9 @@
 <script setup>
     import Header from "../components/Header.vue"
+    import { isAdmin, isConnected, disableAdmin, removeConnection, admin , connected } from '../components/Header.vue';
+
+isConnected()
+console.log(connected)
 </script>
 
 <style scoped>
