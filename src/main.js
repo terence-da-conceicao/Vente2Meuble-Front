@@ -10,4 +10,3 @@ app.use(router)
 
 app.mount('#app')
 
-// diff de syntaxe dans const app + import du router/index.js en moins mais ça pose peut-être aps de probleme

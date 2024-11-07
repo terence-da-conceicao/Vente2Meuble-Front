@@ -1,33 +1,32 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HomePage from '@/views/HomePage.vue';
-import Header from  './components/Header.vue';
-import Connexion from '@/views/Connexion.vue';
-//ajouter un @ pour le src?
+  import { RouterLink, RouterView } from 'vue-router'
+  import HomePage from '@/views/HomePage.vue';
+  import Header from  '@/components/Header.vue';
+  import Connexion from '@/views/Connexion.vue';
+  import Deconnexion from '@/views/Deconnexion.vue';
+  import Inscription from '@/views/Inscription.vue';
+  import Gestion from '@/views/Gestion.vue';
+// @ est un alias de src
+
+
 </script>
+
 
 <template>
   <div id="app">
-    <!-- <HomePage />  -->
-      <RouterLink to="/">HomePage</RouterLink>
-      <RouterLink to="/deconnexion">Déconnexion</RouterLink>
-      <RouterLink to="/connexion">Connexion</RouterLink>
-      <RouterLink to="/">HomePage</RouterLink>
+      
     <router-view />
-    <!--pourquoi un / est syntaxé et pas les autre-->
+    <!--
+    - Cacher l'onglet Gestion dans le header pour les users. L'afficher seulement pour l'admin.
+      On peut faire ça avec v-show ou v-if
+    - Afficher l'onglet Déconnexion seulement quand on est connecté
+    - Afficher l'onglet Inscription seulement quand on n'est pas connecté
+    - Afficher l'onglet HomePage seulement quand on n'est pas sur HomePage
 
+    -->
 
-
-      <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
     </div>
- 
-
-  <!-- <RouterView /> -->
 </template>
 
 <style scoped>
-
 </style>

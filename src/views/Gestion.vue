@@ -1,14 +1,13 @@
-<script>
+<!-- 
+Cette page n'est visible qu'en tant qu'admin -->
 
-// export default {
-//     name : 'Gestion'
-// }
-
+<script setup>
+    import Header from "../components/Header.vue"
 </script>
 
-<style>
+<style></style>
 
-
-</style>
-
-<template></template>
+<template>
+    <Header/>
+    <h1>Gestion</h1>
+</template>
