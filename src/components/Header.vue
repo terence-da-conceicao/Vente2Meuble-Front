@@ -2,7 +2,7 @@
    
 // on importe le composant dont on aura besoin ici 
 
-// import Button from "./Button.vue"
+import Button from "./Button.vue"
 // import Button from "./Button.vue"
 // import Button from "./Button.vue"
 // import Button from "./Button.vue"
@@ -21,43 +21,37 @@ const props = defineProps({
 // état admin ou user pour le bouton gestion de produit? 
 //avec un v-if?
 
-// export default {
-//     name : 'Header'
-// }
+
 </script>
-
-
-
 <style>
-    .header {
-        background-color: rgb(47, 255, 238);
+    header {
+        background-color: #FAF4E3;
         width : 100vw;
-        margin : 0px;
+        margin-bottom : 0px;
         padding: 0rem;
         height: 10vh;
     }
+
+
+
 </style>
-
-
-
 <template>
-    
-    <div class="header">
+
+    <header>
         <img src="./public/51IDpgGCBJL.jpg">
         <h2>Vente2Meubles</h2>
+        
         <a v-show="admin" href="/gestion">Gestion du stock</a>
         <router-link to="/connexion">Connexion</router-link> 
-        <!-- <a class="logSubs" href="./Connexion.vue">Connexion</a> -->
         <router-link to="/inscription">Inscription</router-link>
-        <!-- <a class="logSubs" href="./Inscription.vue">Inscription</a> -->
         <a v-show="connect" href="/deconnexion">Déconnexion</a>
-    </div>
+    </header>
 
 
 </template>
 
 <!--
-    TO-DO LIST
+
 - image lien introuvable
 - flex
 - v-show et leurs props
