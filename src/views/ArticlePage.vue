@@ -71,7 +71,6 @@ h1 {
 
 .listInfos>li{
     width: 30%;
-    background-color: chartreuse;
     text-align: center;
     margin:auto;
     
@@ -81,14 +80,13 @@ h1 {
     
     height: 35dvh;
     width : 50dvw ;
-    background-color: deeppink;
     display: flex;
     flex-direction: column;
 }
 
 .mainImg {
     width : 70%;
-    height : 60%
+    height : 50%
 }
 /* .subImg {
     display : flex;
