@@ -11,11 +11,6 @@ const props = defineProps({
   prix : Number,
 })
 
-
-// export default {
-//     name : 'MeubleCard'
-// }
-
 </script>
 
 <style>
@@ -46,7 +41,7 @@ article {
     <h2>{{ name }}</h2>
     <p>{{ prix }} €</p>
 <!-- utilisation du composant button sur lequel on donne la valeur achetez a la props(variable) cta de Button -->
-    <Button cta="achetez"></Button>
+    <Button cta="En savoir plus"></Button>
 </article>
 
 </template>

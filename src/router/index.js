@@ -4,6 +4,7 @@ import Inscription from '../views/Inscription.vue'
 import Connexion from '../views/Connexion.vue'
 import Deconnexion from '../views/Deconnexion.vue'
 import Gestion from '../views/Gestion.vue'
+import ArticlePage from '../views/ArticlePage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL), //c'est quoi cet import en argument??
@@ -12,7 +13,8 @@ const router = createRouter({
     { path: '/inscription', name: 'Inscription', component: Inscription },
     { path: '/connexion', name: 'Connexion', component: Connexion },
     { path: '/deconnexion', name: 'Deconnexion', component: Deconnexion },
-    { path: '/gestion', name: 'Gestion', component: Gestion }
+    { path: '/gestion', name: 'Gestion', component: Gestion },
+    { path : '/articlePage', name : 'ArticlePage', component: ArticlePage} 
 
 
     //---------------- c'est quoi ce truc en-dessous
