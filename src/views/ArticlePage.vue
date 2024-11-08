@@ -10,16 +10,26 @@ import Button from "../components/Button.vue"
 
 // permet de spécifier les éléments qu'on importe, on lui dit que toute ce qu'il y a dans ma base de donnée sera stocké dans une variabe "data"
 export default {
-    data(){
-        return{
-            data: jsonmeuble
-        }
-    },
-    components: {
-        Header, 
-        Button
+  data() {
+    return {
+      meuble: {} // Objet vide pour stocker le meuble correspondant
+    };
+  },
+  components: {
+    Header,
+    Button
+  },
+  mounted() {
+    // Récupérer l'ID du meuble depuis les paramètres de la route
+    const articleId = this.$route.query.id; // Permet de récupérer l'ID présent dans l'URL de la page
+    // Find() => recherche un élément dans un tableau (jsonmeuble.meubles) on vérifie l'id de tout les item du tableau jasonmeuble et si on a un ITEM;id qui correspond a articleid on return son objet
+    this.meuble = jsonmeuble.meubles.find(item => item.id === parseInt(articleId));
     }
-}
+};
+
+
+//Définition des information que le composant à besoin de récupérer 
+
 
 
 </script>
@@ -107,7 +117,7 @@ width: 25%;
 <section>
 
     <div class="imgContainer">
-        <img src="https://picsum.photos/id/0/200/300" class="mainImg">
+        <img :src="meuble.photo" class="mainImg">
         <!-- <div class="subImg">
             <img src="https://picsum.photos/id/1/200/300">
             <img src="https://picsum.photos/id/2/200/300">
@@ -117,12 +127,13 @@ width: 25%;
 
     <div class="dataContainer">
         <div class="subContainer">
-            <h1>Nom Meuble</h1>
+            <h1>{{ meuble.nom }}</h1>
             <ul class="listInfos">
-                <li>type</li>
-                <li>dimension</li>
-                <li>couleurs</li>
-                <li>matière </li>
+                <li>{{meuble.type}}</li>
+                <li>{{meuble.dimension}}</li>
+                <li>{{meuble.couleur}}</li>
+                <li>{{meuble.matière}} </li>
+                <li>{{ meuble.prix }}€</li>
             </ul>
             <Button cta="Réserver"></Button>
         </div>
@@ -133,6 +144,3 @@ width: 25%;
 
 </template>
 
-<!-- 1- Créer la page qui meuble avec des data préinscrite 
-2- gérer les route pour mener a cette page 
-3- faire en sorte de pouvoir personnaliser la page en fonction du bouton cliqué  -->

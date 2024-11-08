@@ -48,7 +48,7 @@ button:active {
 
 <article>
 	<!-- creation d'un bouton avec comme texte la valeur de la props cta (qui seras entré dans le composant parent) -->
-    <router-link to="/articlePage"> <button> {{ cta }}</button> </router-link>
+     <button> {{ cta }}</button> 
 </article>
 
 </template>

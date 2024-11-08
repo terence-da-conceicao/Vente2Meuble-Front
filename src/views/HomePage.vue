@@ -51,7 +51,7 @@ h1 {
         <!-- ci dessous on fait une boucle for pour récupérer les nom , les image et les prix de chaque meuble -->
         <div v-for="meuble in data.meubles" :key="meuble.nom">
             <!-- ci dessous on appelle notre composant MeubleCard auxquels ont passe en props les data récupéré via la boucle for  -->
-            <MeubleCard :name="meuble.nom" :imgurl="meuble.photo" :prix="meuble.prix"/>
+            <MeubleCard :name="meuble.nom" :imgurl="meuble.photo" :prix="meuble.prix" :id="meuble.id"/>
         </div>
     </div>
 

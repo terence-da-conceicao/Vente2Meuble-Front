@@ -9,7 +9,8 @@ const props = defineProps({
   name: String,
   imgurl : String,
   prix : Number,
-})
+  id : Number
+});
 
 </script>
 
@@ -41,7 +42,7 @@ article {
     <h2>{{ name }}</h2>
     <p>{{ prix }} €</p>
 <!-- utilisation du composant button sur lequel on donne la valeur achetez a la props(variable) cta de Button -->
-    <Button cta="En savoir plus"></Button>
+<RouterLink :to="`/articlePage?id=${id}`"> <Button cta="En savoir plus"></Button></RouterLink>
 </article>
 
 </template>
