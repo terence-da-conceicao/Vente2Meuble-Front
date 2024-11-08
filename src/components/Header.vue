@@ -1,29 +1,23 @@
 <script>
+// computed est une méthode vue qui permet de mettre en cache les datas utilisés => surveille ces données et les mets a jours dans les dépendances
+import {computed} from 'vue' ; 
+import { admin, connected, isAdmin, isConnected } from '../../globalStateManager.js';
 
-//import la méthode ref spécifique à vue qui permet de créer des variable dynamique 
-import {ref} from 'vue'
+// permet de rendre utilisable les éléments qu'on a importer dans le composant 
+export default {
+  setup() {
+    // Utiliser computed pour plus facilement récupérer la valeur de nos variable dynamique (refuse la requete admin.value directement)
+    const adminState = computed(() => admin.value);
+    const connectedState = computed(() => connected.value);
 
-//gestion de la reconnaissance si utilisateur connecté ou non 
-let admin = ref(false)
-let connected = ref(false)
+    return { adminState, connectedState, isAdmin, isConnected };
+  },
+};
 
-//fonction réutilisable ailleur dans le code 
-export function isAdmin() {
-    admin.value = true
-}
-export function isConnected() {
-    connected.value = true
-}
+const adminState = admin.value
+const connectedState = connected.value
 
-export function disableAdmin() {
-    admin.value= false
-}
 
-export function removeConnection() {
-    connected.value = false 
-}
-
-export { admin, connected };
 </script>
 <style scoped>
 
@@ -66,10 +60,12 @@ export { admin, connected };
         <RouterLink to="/" class="link"><h2>Vente2Meubles</h2></RouterLink> 
         
         <div class="conditionDisplay">
-            <RouterLink to="/connexion" class="link" v-if="!connected">Connexion</RouterLink>
-            <RouterLink to="/deconnexion" class="link" v-if="connecte">Déconnexion</RouterLink>
-            <RouterLink to="/inscription" class="link" v-if="!connected">Inscription</RouterLink>
-            <RouterLink to="/gestion" class="link" v-if="admin">Gestion du Stock</RouterLink>
+    <!-- liste des condition pour afficher nos élément en fonction de si l'utilisateur est connecté et si l'utilisateur est un admin -->
+     <!-- la logique de modification du status d'admin n'a pas été créer pour le moment  -->
+            <RouterLink to="/connexion" class="link" v-if="connectedState==false">Connexion</RouterLink>
+            <RouterLink to="/deconnexion" class="link" v-if="connectedState==true">Déconnexion</RouterLink>
+            <RouterLink to="/inscription" class="link" v-if="connectedState==false">Inscription</RouterLink>
+            <RouterLink to="/gestion" class="link" v-if="adminState==true">Gestion du Stock</RouterLink>
         </div>
         </header>
 

@@ -8,8 +8,8 @@ const props = defineProps({
 
 
 </script>
-
-<style>
+<!-- ici scoped permet d'encapsuler le style à l'intérieur du composant et éviter d'impacter le style des autres pages et composants -->
+ <style scoped> 
 /* style du bouton */
 button {
     height: 60px;

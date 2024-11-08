@@ -35,8 +35,7 @@ body {
 
 section {
     display : flex;
-    /* background: rgb(74,106,117);
-    background: linear-gradient(90deg, rgba(74,106,117,1) 42%, rgba(217,164,65,1) 66%); */
+
    
 }
 h1 {
@@ -86,7 +85,7 @@ h1 {
 
 .mainImg {
     width : 70%;
-    height : 50%
+    height : 60%
 }
 /* .subImg {
     display : flex;
