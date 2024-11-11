@@ -1,9 +1,17 @@
-@import './base.css';
+/* @import './base.css'; */
+@import './reset.css';
 
-#header {
-  display : flex;
+body {
+  width: 100%;
+  font-family: montserrat;
+  color: var(--color-text);
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 52%, rgba(241,171,39,1) 92%);
+  /* overflow-x: hidden; */
 }
-
+h1{
+  font-family: "Roboto", serif;
+}
 h2 {
   font-size:30px;
 }
@@ -12,18 +20,18 @@ h2 {
   font-size : 10px;
 }
 
-#app {
+/* #app {
   max-width: 100vw;
   margin: 0 auto;
   font-weight: normal;
-}
+} */
 
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: #4A6A75;
   transition: 0.4s;
-  padding: 3px;
+  /* padding: 3px; */
 }
 
 @media (hover: hover) {
@@ -32,15 +40,9 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-  }
-}
+  } 
+} */

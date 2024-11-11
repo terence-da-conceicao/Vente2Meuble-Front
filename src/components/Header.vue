@@ -21,43 +21,59 @@ const connectedState = connected.value
 </script>
 <style scoped>
 
-    header {
-        background-color: #FAF4E3;
-        width : 100vw;
-        margin-bottom : 0px;
-        padding: 0rem;
-        height: 10vh;
-        display : flex;
-        gap : 5%;
-        
-    }
-    h2 {
-        font-size: 3em;
-        align-self: end;
-        font-family: "Zain", serif;
-        font-weight: 400;
-        font-style: normal;
-
-    }
-   header img {
-    width :5% ;
-    height: 100% ; 
-}
-    .link {
-        align-self : center ;
-        font-family: "Zain", serif;
-        font-weight: 300;
-        font-style: normal;
-        
+header {
+    background-color: #FAF4E3;
+    width : 100%;  
+    height: 100px;
+    display : flex;
+    justify-content: space-around;
+    /* gap : 5%; */
+    font-size:1.5em ;
+    font-family: "Zain", serif;
     }
 
+.homepage {
+    font-size: 2rem;
+    align-self: center;
+   /*  width: 20%; */
+    font-weight: 400;
+    }
+ 
+ .logo{
+  width: 150px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+ }
+
+ .logo>img{
+  width: 90px;
+  height: auto;
+ }
+
+ .link {
+    align-self : center ;
+    font-weight: 300;
+    margin-right: 5em;
+    
+    }
+
+    .conditionDisplay{
+      width: 60vw;
+      display: flex;
+      justify-content: flex-end;
+    }
 
 </style>
+
+
 <template>
 
     <header>
-        <img src="/LogoMeubles.png">
-        <RouterLink to="/" class="link"><h2>Vente2Meubles</h2></RouterLink> 
+      <div class="logo"><img  src="/LogoMeubles.png"></div>
+      
+        
+        <RouterLink to="/" class="link, homepage">Vente2Meubles</RouterLink> 
         
         <div class="conditionDisplay">
     <!-- liste des condition pour afficher nos élément en fonction de si l'utilisateur est connecté et si l'utilisateur est un admin -->
@@ -65,7 +81,7 @@ const connectedState = connected.value
             <RouterLink to="/connexion" class="link" v-if="connectedState==false">Connexion</RouterLink>
             <RouterLink to="/deconnexion" class="link" v-if="connectedState==true">Déconnexion</RouterLink>
             <RouterLink to="/inscription" class="link" v-if="connectedState==false">Inscription</RouterLink>
-            <RouterLink to="/gestion" class="link" v-if="adminState==true">Gestion du Stock</RouterLink>
+            <RouterLink to="/gestion" class="link">Gestion du Stock</RouterLink>
         </div>
         </header>
 
