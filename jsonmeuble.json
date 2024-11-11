@@ -1,30 +1,54 @@
 {
-    "meubles": [
-      {
-        "nom": "Canapé 3 places",
-        "prix": 499.99,
-        "photo": "public/51IDpgGCBJL.jpg"
-      },
-      {
-        "nom": "Table à manger en bois",
-        "prix": 299.99,
-        "photo": "public/51IDpgGCBJL.jpg"
-      },
-      {
-        "nom": "Chaise en métal",
-        "prix": 59.99,
-        "photo": "public/51IDpgGCBJL.jpg"
-      },
-      {
-        "nom": "Buffet scandinave",
-        "prix": 399.99,
-        "photo": "public/51IDpgGCBJL.jpg"
-      },
-      {
-        "nom": "Étagère murale",
-        "prix": 79.99,
-        "photo": "public/51IDpgGCBJL.jpg"
-      }
-    ]
-  }
-  
+  "meubles": [
+    {
+      "id": 0,
+      "nom": "Canapé 3 places",
+      "prix": 499.99,
+      "photo": "/51IDpgGCBJL.jpg",
+      "type": "Canapé",
+      "dimension": "200x90x85 cm",
+      "couleur": "Gris",
+      "matière": "Tissu"
+    },
+    {
+      "id": 1,
+      "nom": "Table à manger en bois",
+      "prix": 299.99,
+      "photo": "/51IDpgGCBJL.jpg",
+      "type": "Table",
+      "dimension": "160x90x75 cm",
+      "couleur": "Chêne naturel",
+      "matière": "Bois"
+    },
+    {
+      "id": 2,
+      "nom": "Chaise en métal",
+      "prix": 59.99,
+      "photo": "/51IDpgGCBJL.jpg",
+      "type": "Chaise",
+      "dimension": "45x45x85 cm",
+      "couleur": "Noir",
+      "matière": "Métal"
+    },
+    {
+      "id": 3,
+      "nom": "Buffet scandinave",
+      "prix": 399.99,
+      "photo": "/51IDpgGCBJL.jpg",
+      "type": "Buffet",
+      "dimension": "120x45x80 cm",
+      "couleur": "Blanc et bois clair",
+      "matière": "Bois, MDF"
+    },
+    {
+      "id": 4,
+      "nom": "Étagère murale",
+      "prix": 79.99,
+      "photo": "/51IDpgGCBJL.jpg",
+      "type": "Étagère",
+      "dimension": "80x20x30 cm",
+      "couleur": "Noir",
+      "matière": "Métal"
+    }
+  ]
+}
