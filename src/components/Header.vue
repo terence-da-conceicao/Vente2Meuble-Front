@@ -81,7 +81,7 @@ header {
             <RouterLink to="/connexion" class="link" v-if="connectedState==false">Connexion</RouterLink>
             <RouterLink to="/deconnexion" class="link" v-if="connectedState==true">Déconnexion</RouterLink>
             <RouterLink to="/inscription" class="link" v-if="connectedState==false">Inscription</RouterLink>
-            <RouterLink to="/gestion" class="link">Gestion du Stock</RouterLink>
+            <RouterLink to="/gestion" class="link">Gestion des stocks</RouterLink>
         </div>
         </header>
 

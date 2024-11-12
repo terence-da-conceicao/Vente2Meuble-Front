@@ -42,20 +42,23 @@ Cette page n'est visible qu'en tant qu'admin -->
   /*style de la nav qui composrte les deux UL */
   .dropdown-menu ul{
     list-style: none;
-   /*  padding: 0;
-    margin: 0; */
+    padding: 0;
+    margin: 0;
   }
 
   /*Style du li contenu dans l'ul principal */
   .menu-item{
     position: relative;
+    font-weight: 600;
+    padding: 10px 5px;
+    border-radius: 5%;
+    border: solid 1px #4A6A75;
   }
 
-  menu-item > a{
+  menu-item>a{
     text-decoration: none;
     padding: 10px 20px;
     display: block;
-    font-weight: bold;
   }
 
   /*Sous-menu caché par défaut */
@@ -68,6 +71,35 @@ Cette page n'est visible qu'en tant qu'admin -->
     min-width: 150px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   }
+  
+  .submenu li {
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+  }
+
+  .submenu li:last-child {
+    border-bottom: none;
+}
+
+/*Styles des lien du sous-menu */
+.submenu li a {
+    text-decoration: none;
+    color: #4A6A75;
+    padding: 10px;
+    display: block;
+}
+
+.submenu li a:hover {
+    background-color: #4A6A75;
+    color: #fff;
+}
+
+/* Affiche le sous-menu au survol de l'élément principal */
+.menu-item:hover .submenu {
+    display: block;
+    z-index: 100;
+}
+
 
   /*style des boutons*/
   button{
