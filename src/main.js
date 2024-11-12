@@ -20,4 +20,4 @@ let meubles_back = fetch('http://localhost:8000/meubles')
         return meubles_back;
       })
       
-console.log (meubles_back.meubles.id)
+// console.log (meubles_back.meubles.id)
