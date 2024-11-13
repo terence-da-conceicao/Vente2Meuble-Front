@@ -4,25 +4,29 @@
 // On importe notre JSON (fausse BDD) et le composant dont on va avoir besoin (ici Header et Button)
 import { ref, onMounted } from 'vue'; // Importation des fonctions Vue nécessaires
 import { useRoute } from 'vue-router'; // Importation de `useRoute` pour accéder aux paramètres de la route
+import { fetchMeubles } from "../APIrequest.js";
 import Header from "../components/Header.vue";
 import Button from "../components/BaseButton.vue";
 import jsonmeuble from "/jsonmeuble.json";
 
-// Création d'un objet réactif `meuble` vide pour stocker le meuble correspondant
-const meuble = ref({});
-
 // Utilisation de la route actuelle pour récupérer les paramètres
 const route = useRoute();
 
-onMounted(() => {
   // Récupérer l'ID du meuble depuis les paramètres de la route
   const articleId = route.query.id; // Permet de récupérer l'ID présent dans l'URL de la page
+  
+// Création d'un objet réactif `meuble` vide pour stocker le meuble correspondant
+let meuble = await fetchMeubles(`http://localhost:8000/meubles/${articleId}`); 
 
+
+
+  
   // Find() => recherche un élément dans un tableau (jsonmeuble.meubles)
   // On vérifie l'id de tous les items du tableau jsonmeuble et si on a un item.id
   // qui correspond à articleId, on retourne son objet
-  meuble.value = jsonmeuble.meubles.find(item => item.id === parseInt(articleId));
-});
+//   meuble.value = jsonmeuble.meubles.find(item => item.id === parseInt(articleId));
+
+
 </script>
 
 
@@ -120,7 +124,7 @@ width: 25%;
 
     <div class="dataContainer">
         <div class="subContainer">
-            <h1>{{ meuble.nom }}</h1>
+            <h1></h1>
             <ul class="listInfos">
                 <li>{{meuble.type}}</li>
                 <li>{{meuble.dimension}}</li>
