@@ -8,19 +8,19 @@ import Header from "../components/Header.vue";
 import MeubleCard from "../components/MeubleCard.vue";
 
 // Déclarer un état réactif pour stocker les meubles
-let meubles = [];
+let meubles = await fetchMeubles('http://localhost:8000/meubles');
 
 // Utiliser onMounted pour récupérer les données quand le composant est monté (appelé dans l'index.html)
-onMounted(async () => {
+/*onMounted(async () => {
     try {
-        meubles.value = await fetchMeubles();
+        meubles.value = await fetchMeubles('http://localhost:8000/meubles');
         console.log(meubles.value)
     } catch (error) {
         console.error("Erreur de récupération des meubles:", error);
     }
-});
+});*/
 
-
+//console.log ("boucle? : ", meubles[0].type, meubles[0].id, meubles[0].photos, meubles[0].couleur, meubles[0].matière)
 </script>
 
 <style scoped>
@@ -46,9 +46,9 @@ onMounted(async () => {
 
     <div class="container">
         <!-- ci dessous on fait une boucle for pour récupérer les nom , les image et les prix de chaque meuble -->
-        <div v-for="meuble in meubles" :key="meuble.id">
+        <div v-for="meuble in meubles.meubles" :key="meuble.id">
             <!-- ci dessous on appelle notre composant MeubleCard auxquels ont passe en props les data récupéré via la boucle for  -->
-            <MeubleCard :name="meubles.type" :imgurl="meubles.images" :prix="meubles.prix" :id="meuble.id"/>
+            <MeubleCard :type="meuble.Type" :photos="meuble.photos" :prix="meuble.prix" :id="meuble.id" :couleur="meuble.couleur" :matière="meuble.matiere"/>
         </div>
     </div>
 

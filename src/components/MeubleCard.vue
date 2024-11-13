@@ -7,10 +7,12 @@ import Header from "../components/Header.vue"
 
 // on défini les props propre à notre composant MeubleCard : on peut donc lui injecter un nom/ une url d'image / un prix 
 const props= defineProps({
-  name: String,
-  imgurl : String,
+  type : String,
+  photos : String,
   prix : Number,
-  id : Number
+  id : Number,
+  couleur : String,
+  matiere : String,
 });
 
 </script>
@@ -39,8 +41,8 @@ article {
 
 <article>
 <!-- structure de la carte : une image , un titre de niveau 2 qui sera la nom qu'on lui injectera en props, prix qui sera celui qu'on lui injectera en props -->
-    <img :src="imgurl">
-    <h2>{{ name }}</h2>
+    <img :src="photos">
+    <h2>{{ type }}</h2>
     <p>{{ prix }} €</p>
 <!-- utilisation du composant button sur lequel on donne la valeur achetez a la props(variable) cta de Button -->
 <RouterLink :to="`/articlePage?id=${id}`"> <BaseButton cta="En savoir plus"></BaseButton></RouterLink>

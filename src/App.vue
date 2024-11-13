@@ -14,7 +14,7 @@
 
 <template>
   <div id="app">
-      
+    <suspense> 
     <router-view />
     <!--
     - Cacher l'onglet Gestion dans le header pour les users. L'afficher seulement pour l'admin.
@@ -24,6 +24,7 @@
     - Afficher l'onglet HomePage seulement quand on n'est pas sur HomePage
 
     -->
+    </suspense>
 
     </div>
 </template>
