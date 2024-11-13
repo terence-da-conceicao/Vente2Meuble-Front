@@ -4,6 +4,7 @@
 //On importe les méthodes vue, la méthode du fetch réalisé dans le js APIrequest ainsi que nos composant header et meubleCard
 import { ref, onMounted } from 'vue';
 import { fetchMeubles } from "../APIrequest.js";
+import Form from '@/components/Form.vue';
 import Header from "../components/Header.vue";
 import MeubleCard from "../components/MeubleCard.vue";
 
