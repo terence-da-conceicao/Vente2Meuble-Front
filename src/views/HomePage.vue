@@ -18,7 +18,7 @@ let meubles = await fetchMeubles('http://localhost:8000/meubles');
 // Utiliser onMounted pour récupérer les données quand le composant est monté (appelé dans l'index.html)
 
 
-console.log('meuble?',meubles)
+console.log('meuble?',meubles.meubles[0])
 
 
 
@@ -47,7 +47,7 @@ console.log('meuble?',meubles)
 
     <div class="container">
         <!-- ci dessous on fait une boucle for pour récupérer les nom , les image et les prix de chaque meuble -->
-        <div v-for="meuble in meubles" :key="meuble.id">
+        <div v-for="meuble in meubles.meubles" :key="meuble.id">
             <!-- ci dessous on appelle notre composant MeubleCard auxquels ont passe en props les data récupéré via la boucle for  -->
             <MeubleCard :type="meuble.Type" :photos="meuble.photos" :prix="meuble.prix" :id="meuble.id" :matiere="meuble.matiere" :couleur="meuble.couleur"/>
         </div>
