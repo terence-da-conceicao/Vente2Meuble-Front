@@ -14,17 +14,9 @@
 
 <template>
   <div id="app">
-    <suspense> 
+    <suspense>
     <router-view />
-    <!--
-    - Cacher l'onglet Gestion dans le header pour les users. L'afficher seulement pour l'admin.
-      On peut faire ça avec v-show ou v-if
-    - Afficher l'onglet Déconnexion seulement quand on est connecté
-    - Afficher l'onglet Inscription seulement quand on n'est pas connecté
-    - Afficher l'onglet HomePage seulement quand on n'est pas sur HomePage
-
-    -->
-    </suspense>
+   </suspense>
 
     </div>
 </template>

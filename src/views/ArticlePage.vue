@@ -95,7 +95,6 @@ width: 25%;
             <h1>{{meuble.type}} en {{meuble.matiere}} {{meuble.couleur}}</h1>
             <ul class="listInfos">
                 <li>{{meuble.type}}</li>
-                <li>{{meuble.dimensions}}</li>
                 <li>{{meuble.couleur}}</li>
                 <li>{{meuble.matiere}} </li>
                 <li>{{meuble.dimensions}}</li>
