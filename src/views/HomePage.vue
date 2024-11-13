@@ -2,24 +2,25 @@
 
 <script setup>
 //On importe les méthodes vue, la méthode du fetch réalisé dans le js APIrequest ainsi que nos composant header et meubleCard
-import { ref, onMounted } from 'vue';
+import {onMounted} from 'vue';
 import { fetchMeubles } from "../APIrequest.js";
 import Form from '@/components/Form.vue';
 import Header from "../components/Header.vue";
 import MeubleCard from "../components/MeubleCard.vue";
 
 // Déclarer un état réactif pour stocker les meubles
-let meubles = [];
+
+
+let meubles = await fetchMeubles('http://localhost:8000/meubles'); 
+
+
 
 // Utiliser onMounted pour récupérer les données quand le composant est monté (appelé dans l'index.html)
-onMounted(async () => {
-    try {
-        meubles.value = await fetchMeubles();
-        console.log(meubles.value)
-    } catch (error) {
-        console.error("Erreur de récupération des meubles:", error);
-    }
-});
+
+
+console.log('meuble?',meubles)
+
+
 
 
 </script>
@@ -39,7 +40,6 @@ onMounted(async () => {
 <template>
 
 <section>
-
     <Header/>
 
     <h1>Pour quel meuble craquerez-vous?</h1>
@@ -49,7 +49,7 @@ onMounted(async () => {
         <!-- ci dessous on fait une boucle for pour récupérer les nom , les image et les prix de chaque meuble -->
         <div v-for="meuble in meubles" :key="meuble.id">
             <!-- ci dessous on appelle notre composant MeubleCard auxquels ont passe en props les data récupéré via la boucle for  -->
-            <MeubleCard :name="meubles.type" :imgurl="meubles.images" :prix="meubles.prix" :id="meuble.id"/>
+            <MeubleCard :type="meuble.Type" :photos="meuble.photos" :prix="meuble.prix" :id="meuble.id" :matiere="meuble.matiere" :couleur="meuble.couleur"/>
         </div>
     </div>
 
@@ -57,6 +57,5 @@ onMounted(async () => {
      
 
 </section>
-
 
 </template>
