@@ -1,38 +1,31 @@
-<!-- Le composant principal dans lequel va s'imbriquer tous les autre composant  -->
+<!-- Le composant principal dans lequel vont s'imbriquer tous les autres composants -->
 
-<script>
+<script setup>
+// On importe notre JSON (fausse BDD) et le composant dont on va avoir besoin (ici Header et Button)
+import { ref, onMounted } from 'vue'; // Importation des fonctions Vue nécessaires
+import { useRoute } from 'vue-router'; // Importation de `useRoute` pour accéder aux paramètres de la route
+import Header from "../components/Header.vue";
+import Button from "../components/BaseButton.vue";
+import jsonmeuble from "/jsonmeuble.json";
 
-// On importe notre JSON (fausse BDD) et le composant dont on va avoir besoin (ici header)
-import Header from "../components/Header.vue"
-import jsonmeuble from "/jsonmeuble.json"
-import Button from "../components/Button.vue"
+// Création d'un objet réactif `meuble` vide pour stocker le meuble correspondant
+const meuble = ref({});
 
+// Utilisation de la route actuelle pour récupérer les paramètres
+const route = useRoute();
 
-// permet de spécifier les éléments qu'on importe, on lui dit que toute ce qu'il y a dans ma base de donnée sera stocké dans une variabe "data"
-export default {
-  data() {
-    return {
-      meuble: {} // Objet vide pour stocker le meuble correspondant
-    };
-  },
-  components: {
-    Header,
-    Button
-  },
-  mounted() {
-    // Récupérer l'ID du meuble depuis les paramètres de la route
-    const articleId = this.$route.query.id; // Permet de récupérer l'ID présent dans l'URL de la page
-    // Find() => recherche un élément dans un tableau (jsonmeuble.meubles) on vérifie l'id de tout les item du tableau jasonmeuble et si on a un ITEM;id qui correspond a articleid on return son objet
-    this.meuble = jsonmeuble.meubles.find(item => item.id === parseInt(articleId));
-    }
-};
+onMounted(() => {
+  // Récupérer l'ID du meuble depuis les paramètres de la route
+  const articleId = route.query.id; // Permet de récupérer l'ID présent dans l'URL de la page
 
-
-//Définition des information que le composant à besoin de récupérer 
-
-
-
+  // Find() => recherche un élément dans un tableau (jsonmeuble.meubles)
+  // On vérifie l'id de tous les items du tableau jsonmeuble et si on a un item.id
+  // qui correspond à articleId, on retourne son objet
+  meuble.value = jsonmeuble.meubles.find(item => item.id === parseInt(articleId));
+});
 </script>
+
+
 
 <style scoped>
 
@@ -48,11 +41,11 @@ section {
 
    
 }
-h1 {
+/* h1 {
     text-align: center;
     font-size: 3em;
     margin-bottom: 5rem;
-}
+} */
 .imgContainer {
     width : 50dvw;
     background-color: #e0d5b6 ;

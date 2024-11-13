@@ -2,8 +2,7 @@
 
 //  Définition des props utilisable sur le composant Button ici : cta (call to action)
 const props = defineProps({
-  cta: String,
-  pageAdress : String,
+  cta: String
 })
 
 
@@ -46,9 +45,7 @@ button:active {
 
 <template>
 
-<article>
 	<!-- creation d'un bouton avec comme texte la valeur de la props cta (qui seras entré dans le composant parent) -->
      <button> {{ cta }}</button> 
-</article>
 
 </template>

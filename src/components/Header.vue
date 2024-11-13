@@ -81,6 +81,7 @@ header {
             <RouterLink to="/connexion" class="link" v-if="connectedState==false">Connexion</RouterLink>
             <RouterLink to="/deconnexion" class="link" v-if="connectedState==true">Déconnexion</RouterLink>
             <RouterLink to="/inscription" class="link" v-if="connectedState==false">Inscription</RouterLink>
+            <a href="#sectionFormAddMeuble" class="link">Ajout de meuble</a>
             <RouterLink to="/gestion" class="link">Gestion des stocks</RouterLink>
         </div>
         </header>
@@ -89,7 +90,6 @@ header {
 </template>
 
 <!--
-
 - image lien introuvable
 - flex
 - v-show et leurs props

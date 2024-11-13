@@ -24,13 +24,8 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-/* style du titre de la page  */
-h1 {
-    text-align: center;
-    margin : 5%;
-    font-size: 4em;
-    font-style: italic;
-}
+
+
 /* style de la div qui contient toutes les cartes produits */
 .container {
     display : grid; 
@@ -51,11 +46,14 @@ h1 {
 
     <div class="container">
         <!-- ci dessous on fait une boucle for pour récupérer les nom , les image et les prix de chaque meuble -->
-        <div v-for="meuble in meubles" :key="meubles.id">
+        <div v-for="meuble in meubles" :key="meuble.id">
             <!-- ci dessous on appelle notre composant MeubleCard auxquels ont passe en props les data récupéré via la boucle for  -->
             <MeubleCard :name="meubles.type" :imgurl="meubles.images" :prix="meubles.prix" :id="meuble.id"/>
         </div>
     </div>
+
+<Form/>
+     
 
 </section>
 
