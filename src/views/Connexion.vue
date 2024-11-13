@@ -29,7 +29,7 @@
 
 <template>
     <Header/>
-     <p>CONNEXION</p>
+     <h1>CONNEXION</h1>
 
      <form action="/login" method="post">
       <label for="email">Mail</label>

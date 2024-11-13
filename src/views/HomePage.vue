@@ -1,34 +1,26 @@
 <!-- Le composant principal dans lequel va s'imbriquer tous les autre composant  -->
 
-<script>
+<script setup>
 
 // On importe notre JSON (fausse BDD) et le composant dont on va avoir besoin
     import Header from "../components/Header.vue"
     import jsonmeuble from "/jsonmeuble.json"
     import MeubleCard from "../components/MeubleCard.vue"
+    import Form from "../components/Form.vue"
+    
 
-// permet de spécifier les éléments qu'on importe, on lui dit que toute ce qu'il y a dans ma base de donnée sera stocké dans une variabe "data"
-export default {
-    data(){
-        return{
-            data: jsonmeuble
-        }
-    },
-    components: {
-        Header, MeubleCard
-    }
-}
-
+// On crée une variable réactive pour stocker les données de la "base de données" JSON
+const data = jsonmeuble;
 </script>
 
 <style scoped>
 /* style du titre de la page  */
-h1 {
+/* h1 {
     text-align: center;
     margin : 5%;
     font-size: 4em;
     font-style: italic;
-}
+} */
 /* style de la div qui contient toutes les cartes produits */
 .container {
     display : grid; 
@@ -54,6 +46,9 @@ h1 {
             <MeubleCard :name="meuble.nom" :imgurl="meuble.photo" :prix="meuble.prix" :id="meuble.id"/>
         </div>
     </div>
+
+<Form/>
+     
 
 </section>
 

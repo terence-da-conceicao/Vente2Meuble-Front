@@ -6,13 +6,7 @@ Cette page n'est visible qu'en tant qu'admin -->
 </script>
 
 <style scoped>
-  h1{
-    font-family: roboto;
-    font-size: 4em;
-    text-align: center;
-    font-style: italic;
-    margin: 5% 0;
-  }
+
   table{
     justify-self: center;
     text-align: center;

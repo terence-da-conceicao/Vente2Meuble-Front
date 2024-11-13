@@ -1,11 +1,12 @@
 <script setup>
 
-// on importe le composant dont on aura besoin ici 
+// on importe le ou les composant(s) dont on aura besoin ici 
 
-import Button from "./Button.vue"
+import BaseButton from "./BaseButton.vue"
+import Header from "../components/Header.vue"
 
 // on défini les props propre à notre composant MeubleCard : on peut donc lui injecter un nom/ une url d'image / un prix 
-const props = defineProps({
+const props= defineProps({
   name: String,
   imgurl : String,
   prix : Number,
@@ -42,7 +43,7 @@ article {
     <h2>{{ name }}</h2>
     <p>{{ prix }} €</p>
 <!-- utilisation du composant button sur lequel on donne la valeur achetez a la props(variable) cta de Button -->
-<RouterLink :to="`/articlePage?id=${id}`"> <Button cta="En savoir plus"></Button></RouterLink>
+<RouterLink :to="`/articlePage?id=${id}`"> <BaseButton cta="En savoir plus"></BaseButton></RouterLink>
 </article>
 
 </template>
