@@ -10,19 +10,12 @@ import MeubleCard from "../components/MeubleCard.vue";
 
 // Déclarer un état réactif pour stocker les meubles
 
-
 let meubles = await fetchMeubles('http://localhost:8000/meubles'); 
-
-
-
 // Utiliser onMounted pour récupérer les données quand le composant est monté (appelé dans l'index.html)
-
-
 console.log('meuble?',meubles.meubles[0])
 
-
-
-
+    
+//console.log ("boucle? : ", meubles[0].type, meubles[0].id, meubles[0].photos, meubles[0].couleur, meubles[0].matière)
 </script>
 
 <style scoped>
