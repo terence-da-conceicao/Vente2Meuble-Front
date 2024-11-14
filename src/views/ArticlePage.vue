@@ -7,16 +7,24 @@ import { fetchMeubles } from "../APIrequest.js";
 import Header from "../components/Header.vue";
 import Button from "../components/BaseButton.vue";
 import jsonmeuble from "/jsonmeuble.json";
+
+
 // Utilisation de la route actuelle pour récupérer les paramètres
 const route = useRoute();
+
   // Récupérer l'ID du meuble depuis les paramètres de la route
   const articleId = route.query.id; // Permet de récupérer l'ID présent dans l'URL de la page
+  
 // Création d'un objet réactif `meuble` vide pour stocker le meuble correspondant
-let meuble = await fetchMeubles(`http://localhost:8000/meubles/${articleId}`);
+let meuble = await fetchMeubles(`http://localhost:8000/meubles/${articleId}`); 
+
+
+
   // Find() => recherche un élément dans un tableau (jsonmeuble.meubles)
   // On vérifie l'id de tous les items du tableau jsonmeuble et si on a un item.id
   // qui correspond à articleId, on retourne son objet
 //   meuble.value = jsonmeuble.meubles.find(item => item.id === parseInt(articleId));
+
 </script>
 <style scoped>
 body {
@@ -92,7 +100,9 @@ width: 25%;
     </div>
     <div class="dataContainer">
         <div class="subContainer">
+
             <h1>{{meuble.type}} en {{meuble.matiere}} {{meuble.couleur}}</h1>
+
             <ul class="listInfos">
                 <li>{{meuble.type}}</li>
                 <li>{{meuble.couleur}}</li>
