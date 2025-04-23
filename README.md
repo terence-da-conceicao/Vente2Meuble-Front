@@ -1,29 +1,26 @@
-# vue-project
+# V2M – Front (Vue.js)
 
-This template should help get you started developing with Vue 3 in Vite.
+Ce dépôt contient la partie **Front-end** du projet **V2M**, développée avec **Vue.js**.  
+Il est connecté à une API Symfony (Back-end à cloner séparément).
 
-## Recommended IDE Setup
+## Prérequis
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Node.js >= 18  
+- [npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)  
 
-## Customize configuration
+## Installation
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+1. Cloner le dépôt
+2. Installer les dépendances avec npm install ou yarn install
+3. Lancer le serveur de développement avec npm run dev
 
-## Project Setup
+L'application sera accessible par défaut à http://localhost:5173
 
-```sh
-npm install
-```
+## Structure du projet
+src/ – Composants, vues, stores, etc.
+public/ – Fichiers statiques
+env – Fichiers d'environnement
+vite.config.js – Configuration Vite.js
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Backend Symfony
+Le back-end du projet est développé en Symfony. Il est disponible sur https://github.com/terence-da-conceicao/Vente2Meubles-Back
